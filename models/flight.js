@@ -27,8 +27,10 @@ const flightSchema = new Schema({
 
     departs: {
         type: Date,
-        default: Date.now, // change to Date.now + 365 Days,
+        date: { default: Date.now + 365 }, // change to Date.now + 365 Days,
         required: true,
         unique: true,
     },
 });
+
+module.exports = mongoose.model('Flight', flightSchema);
