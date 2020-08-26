@@ -27,8 +27,8 @@ const flightSchema = new Schema({
 
     departs: {
         type: Date,
-        default: Date.now + 365 Days, 
+        default: Date.now, // change to Date.now + 365 Days,
         required: true,
         unique: true,
     },
-})
+});
