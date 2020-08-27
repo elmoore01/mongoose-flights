@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/flights',
-{ useNewUrlParser: true, useCreateIndex: true }
-);
+mongoose.connect('mongodb://localhost/flights', { 
+    useNewUrlParser: true, 
+    useCreateIndex: true,
+    useCreateIndex: true
+});
 
 const db = mongoose.connection;
 
