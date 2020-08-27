@@ -15,7 +15,7 @@ const flightSchema = new Schema({
         default: 'DEN',
         required: true,
         unique: true,
-    },
+    }, 
 
     flightNo: {
         type: Number,
@@ -27,10 +27,11 @@ const flightSchema = new Schema({
 
     departs: {
         type: Date,
-        date: { default: Date.now + 365 }, // is this correct?
+        date: { default: Date.now() + 365 }, // is this correct?
         required: true,
         unique: true,
     },
+        // timestamps: true
 });
 
 module.exports = mongoose.model('Flight', flightSchema);

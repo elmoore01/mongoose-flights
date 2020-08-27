@@ -1,32 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Mongoose Flights</title>
-</head>
-<body>
-    <%- include('../partials/header') %>
-    <table id="list">
-        <thead>
+<%- include('../partials/header') %>
+<table id="list">
+    <thead>
+        <tr>
+            <th>Airline</th>
+            <th>Airport</th>
+            <th>Flight No.</th>
+            <th>Departure Date/Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% flights.forEach(function(s) { %>
             <tr>
-                <th>Airline</th>
-                <th>Airport</th>
-                <th>Flight No.</th>
-                <th>Departure Date/Time</th>
+                <td><%= s.airline %></td>
+                <td><%= s.airport %></td>
+                <td><%= s.flightNo %></td>
+                <td><% s.departs %></td>
             </tr>
-        </thead>
-        <tbody>
-            <% flights.forEach(function(s) { %>
-                <tr>
-                    <td><%= s.airline %></td>
-                    <td><%= s.airport %></td>
-                    <td><%= s.flightNo %></td>
-                    <td><% s.departs %></td>
-                </tr>
-            <% }); %>
-        </tbody>
-    </table>
-</body>
-</html>
+        <% }); %>
+    </tbody>
+</table>
