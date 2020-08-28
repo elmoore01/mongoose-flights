@@ -17,6 +17,9 @@
                 <td><%= s.departs.toLocaleString() %></td>
                 <td><form action="/flights/<%= s.id %>?_method=DELETE" method="POST">
                     <button type="submit">DELETE</button></form></td>
+                <td>
+                    <a href="/flights/<%= s.id %>">Details</a>
+                </td>
             </tr>
         <% }); %>
     </tbody>

@@ -1,13 +1,8 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Airline: </div>
-  <div><%= flight.airline %></div>
-  <div>Airport: </div>
-  <div><%= flight.airport %></div>
-  <div>Flight No: </div>
-  <div><%= flight.flightNo %></div>
-  <div>Departure Date/Time: </div>
-  <div><%= flight.departs %></div>
-  <button type="submit">Add Flight</button>
+  <div>Airline: <%= flight.airline %></div>
+  <div>Airport: <%= flight.airport %></div>
+  <div>Flight No: <%= flight.flightNo %></div>
+  <div>Departure Date/Time: <%= flight.departs.toLocaleString()%></div>
 </section>

@@ -35,13 +35,13 @@ body > main {
   background-color: #E8ECEB;
   padding: 20px;
   overflow-y: scroll;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 #add-flight input[type="submit"] {
   grid-column: span 2;
   width: 10rem;
-  margin: 20px;
+  margin: 10px;
 }
 
 table {
@@ -59,7 +59,7 @@ table td {
   text-align: center;
 }
 form {
-  margin: 40px;
+  margin: 10px;
   text-align: center;
   font-size: 18px;
 }
