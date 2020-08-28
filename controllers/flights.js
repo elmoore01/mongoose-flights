@@ -8,19 +8,20 @@ module.exports = {
 
 function index(req, res) {
     Flight.find({}, function(err, flights) {
-        res.render('flights/index', { title: 'All Flights', flights});
-    });
-}
-
-function newFlight(req, res) {
-    res.render('flights/new', {title: 'Create Flights'});
+        console.log(flights);
+        res.render('flights/index', { flights, title: 'All Flights' });
+    }).sort( {departs: 'ascending'} );
 }
 function create(req, res) {
+    console.log(req.body);
+    if (!req.body.departs) delete req.body.departs;
     const flight = new Flight(req.body);
-    flight.user = req.user._id;
     flight.save(function(err) {
-        if (err) return res.redirect('/flights/new');
-        console.log(flights);
-        res.redirect(`/flights/${flight._id}`);
+        if (err) return res.redirect('/flights/new')
+        res.redirect('/flights');
     });
+}
+function newFlight(req, res) {
+    
+    res.render('flights/new', { title: 'Add Flight' });
 }

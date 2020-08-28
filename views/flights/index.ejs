@@ -14,7 +14,7 @@
                 <td><%= s.airline %></td>
                 <td><%= s.airport %></td>
                 <td><%= s.flightNo %></td>
-                <td><% s.departs %></td>
+                <td><%= s.departs.toLocaleString() %></td>
             </tr>
         <% }); %>
     </tbody>

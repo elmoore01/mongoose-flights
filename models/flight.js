@@ -5,16 +5,12 @@ const flightSchema = new Schema({
     airline: {
         type: String,
         enum: ['American', 'Delta', 'Southwest','United'],
-        required: true, 
-        unique: true,
     },
     
     airport: {
         type: String,
         enum: ['ATL', 'DFW', 'DEN', 'LAX', 'SAN'],
         default: 'DEN',
-        required: true,
-        unique: true,
     }, 
 
     flightNo: {
@@ -22,16 +18,12 @@ const flightSchema = new Schema({
         min: [10],
         max: [9999],
         required: true,
-        unique: true,
-    },
+      },
 
     departs: {
         type: Date,
         date: { default: Date.now() + 365 }, // is this correct?
-        required: true,
-        unique: true,
     },
-        // timestamps: true
 });
 
 module.exports = mongoose.model('Flight', flightSchema);
