@@ -1,6 +1,14 @@
 <%- include('../partials/header') %>
 
+  <label>Seat</label>
+  <form action = "/flights/<%=flight._id%>/tickets" method = "POST">
+  <input type="text" name = "seat">
 
+  
+    <label>Price</label>
+      <input type="number" name="price">
+      <button type="submit">Add Ticket</button>
+  </form> 
 
 
 

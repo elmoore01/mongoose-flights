@@ -7,6 +7,8 @@ var ticketsCtrl = require('../controllers/tickets');
 // router.get('/:id', flightsCtrl.show);
 // router.post('/', flightsCtrl.create);
 // router.delete('/:id', flightsCtrl.delete);
+router.get('/flights/:id/tickets/new', ticketsCtrl.new);
+
 
 
 module.exports = router;
