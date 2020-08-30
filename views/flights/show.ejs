@@ -8,6 +8,14 @@
 </section>
 
 <a href="/flights/<%= flight._id %>/tickets/new">New Ticket</a>
+<% if (tickets.length) { %>
+  <% tickets.forEach(function (t) { %>
+    <div>Ticket:<%= t.seat %></div>
+  <% }) %>
+<% } else { %>
+  no ticket
+<% } %>
+
 
 <label>Airport</label>
 <form action = "/flights/<%=flight._id%>/destinations" method = "POST">
