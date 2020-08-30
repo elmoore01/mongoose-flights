@@ -7,6 +7,8 @@
   <div>Departure Date/Time: <%= flight.departs.toLocaleString() %></div>
 </section>
 
+<a href="/flights/<%= flight._id %>/tickets/new">New Ticket</a>
+
 <label>Airport</label>
 <form action = "/flights/<%=flight._id%>/destinations" method = "POST">
 <select name = "airport">
@@ -44,3 +46,5 @@
 <% } else { %>
   <h5>No Destinations</h5>
 <% } %>
+
+<%- include('../partials/footer') %>
