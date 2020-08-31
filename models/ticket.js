@@ -9,7 +9,7 @@ const ticketSchema = new Schema({
 
     price: {
         type: Number,
-        min: 0
+        min: 0,
     },
 
     flight: {
@@ -17,5 +17,7 @@ const ticketSchema = new Schema({
         ref: "Flight"
     }
 })
+
+tickets: [ticketSchema];
 
 module.exports = mongoose.model("Ticket", ticketSchema);

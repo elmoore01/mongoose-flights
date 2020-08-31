@@ -14,6 +14,7 @@ function index(req, res) {
         res.render('flights/index', { flights, title: 'All Flights' });
     });
 }
+
 function create(req, res) {
     if (!req.body.departs) delete req.body.departs;
     const flight = new Flight(req.body);

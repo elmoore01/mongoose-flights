@@ -2,23 +2,13 @@
 
 <section id="show-page">
   <div>Airline: <%= flight.airline %></div>
-  <div>Airport: <%= flight.airport %></div>
+  <div>Departure Airport: <%= flight.airport %></div>
   <div>Flight No: <%= flight.flightNo %></div>
   <div>Departure Date/Time: <%= flight.departs.toLocaleString() %></div>
 </section>
 
-<a href="/flights/<%= flight._id %>/tickets/new">New Ticket</a>
-<% if (tickets.length) { %>
-  <% tickets.forEach(function (t) { %>
-    <div>Ticket:<%= t.seat %></div>
-  <% }) %>
-<% } else { %>
-  no ticket
-<% } %>
-
-
-<label>Airport</label>
 <form action = "/flights/<%=flight._id%>/destinations" method = "POST">
+<label>Arrival Airport</label>
 <select name = "airport">
   <option value="AUS">AUS</option>
   <option value="DFW">DFW</option>
@@ -26,7 +16,8 @@
   <option value="LAX">LAX</option>
   <option value="SAN">SAN</option>
 </select>
-  <label>Arrivals</label>
+
+  <label>Date/Time</label>
     <input type="datetime-local" name="arrival">
     <button type="submit">Add Destination</button>
 </form> 
@@ -35,7 +26,7 @@
   <table>
     <thead>
       <tr>
-      	 <th>Airport</th>
+      	<th>Airport</th>
         <th>Arrivals</th>
       </tr>
     </thead>
@@ -53,6 +44,15 @@
   </table>
 <% } else { %>
   <h5>No Destinations</h5>
+<% } %>
+
+<a href="/flights/<%= flight._id %>/tickets/new">Create New Ticket</a>
+<% if (tickets.length) { %>
+  <% tickets.forEach(function (t) { %>
+    <div>Ticket: <%= t.seat %></div>
+  <% }) %>
+<% } else { %>
+  <h5>No Ticket Purchased</h5>
 <% } %>
 
 <%- include('../partials/footer') %>

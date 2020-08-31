@@ -2,14 +2,14 @@
   box-sizing: border-box;
   padding: 10px;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: #424748;
+  color: #061d79;
   text-decoration: none;
   font-weight: bold;
 }
 
 body {
   margin: 5;
-  height: 100vh;
+  height: auto;
   display: grid;
   grid-template-rows: 50px 1fr;
   grid-template-areas: 
@@ -45,7 +45,7 @@ body > main {
 }
 
 table {
-  font-size: 20px;
+  font-size: 18px;
   margin: 40px;
 }
 
@@ -61,5 +61,9 @@ table td {
 form {
   margin: 10px;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
+}
+
+h5 {
+  color: red;
 }
